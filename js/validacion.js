@@ -15,16 +15,10 @@ const checkbox = document.querySelector("#terminos")
 
 
 function validarCampos() {
-    if (nombre.value === '' || apellido.value === '' || email.value === '' || contraseña1.value === '' || contraseña2.value === '' || checkbox.checked === false) {
+    if ( nombre.value === '' || apellido.value === '' || email.value === '' || contraseña1.value === '' || contraseña2.value === '' || checkbox.checked === false || contraseña1.value.length <= 6 || contraseña2.value.length <= 6 || contraseña1.value !== contraseña2.value
+    ) {
         showAlertError();
-    } if (contraseña1.value.length <= 6 || contraseña2.value.length <= 6) {
-        showAlertError();
-    } if (contraseña1.value !== contraseña2.value) {
-        showAlertError();
-    } if (!checkbox.checked) {
-        showAlertError();
-    }
-    else {
+    } else {
         showAlertSuccess();
     }
 }
